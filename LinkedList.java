@@ -15,6 +15,7 @@ public class LinkedList<E> {
     }
 
     /**
+     * Checks if this list is empty
      * @return true if this list is empty
      */
     public boolean isEmpty() {
@@ -30,7 +31,7 @@ public class LinkedList<E> {
             head = new Node<E>(element, null);
         } else {
             Node<E> tmp = head;
-            
+
             while (tmp.next != null) {
                 tmp = tmp.next;
             }
@@ -60,6 +61,7 @@ public class LinkedList<E> {
     }
 
     /**
+     * Removes and returns the element at the specified position in this list 
      * @param index
      * @return the element at the specified position in this list
      */
@@ -76,17 +78,13 @@ public class LinkedList<E> {
 
         Node<E> curr = head;
         Node<E> prev = null;
-
         for (int i = 0; i < index; i++) {
             prev = curr;
             curr = curr.next;
         }
-
         prev.next = curr.next;
 
         return curr.element;
- 
-
     }
 
     /**
@@ -97,6 +95,7 @@ public class LinkedList<E> {
     }
 
     /**
+     * Returns the size of this list
      * @return the number of elements in this list
      */
     public int size() {
@@ -141,8 +140,8 @@ public class LinkedList<E> {
         
         /**
          * Constructs a node with 
-         * @param element
-         * @param next
+         * @param element 
+         * @param next pointer pointing to the next node
          */
         public Node(E element, Node<E> next) {
             this.element = element;
@@ -165,24 +164,8 @@ public class LinkedList<E> {
         myList.remove(1);
         System.out.println("myList: " + myList.toString());
         System.out.println("Size = " + myList.size());  
-        myList.remove(0);
-        myList.remove(0); 
+        myList.clear();
         System.out.println("Size = " + myList.size()); 
-        /*
-        System.out.println("Size = " + myList.size()); 
-        myList.remove(0);
-        System.out.println(myList.isEmpty());   // true
-        myList.add(-23);
-        myList.add(17);
-        myList.add(100);
-        System.out.println("Size = " + myList.size());      // 3
-        System.out.println("myList: " + myList.toString());  // -23 17 100
-        
-        myList.remove();
-        myList.remove();
-        System.out.println(myList.size());      // 1
-        System.out.println(myList.toString());  // 100
-        */ 
 	}
 }
 
